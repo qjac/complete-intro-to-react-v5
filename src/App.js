@@ -1,3 +1,6 @@
+import React from "react";
+import { render } from "react-dom";
+
 const Pet = props => {
   return React.createElement("div", {}, [
     React.createElement("h1", {}, props.name),
@@ -19,8 +22,13 @@ const App = () => {
       animal: "Bird",
       breed: "Cockatiel"
     }),
-    React.createElement(Pet, { name: "Doink", animal: "Cat", breed: "Mix" })
+    React.createElement(Pet, { name: "Doink", animal: "Cat", breed: "Mix" }),
+    React.createElement(Pet, {
+      name: "Comet",
+      animal: "Cat",
+      breed: "American Shorthair"
+    })
   ]);
 };
 
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+render(React.createElement(App), document.getElementById("root"));
