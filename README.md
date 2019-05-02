@@ -28,8 +28,17 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
     - takes place of `componentWillMount`, `componentDidMount`, and `componentDidUpdate`
     - component renders on screen before `useEffect` runs. `useEffect` runs asynchronously after the component renders and then updates the component and rerenders
     - final arg for useEffect is an array of dependencies (what variables it's taking in and needs to watch). If you want to run it only once after render leave dependancy arg empty and it won't watch for any updates and run again-AND make sure it actually doesn't have dependancies (otherwise it'll keep auto updating with nothing to watch for and crash your api)
+    - useEffect will propagate updates to dependant components
 - Rendering
   - Every time something is updated the component rerenders, so it's important to keep render functions light. Heavy lifting should be done elsewhere. Render function should focus on rendering.
+- Strictmode
+  - React is working on deprecating some features. Strictmode will throw errors if you try to use any of those near dead features
+  - can wrap only part of app (like maybe the new part) to stop from using those features, but leave the older stuff in place without throwing warnings
+  - it is a component, so throw it in the render. It's only for development, but can stay in code—the browser will ignore it
+- `async`
+  - will always return a promise
+  - `wait` keyword does just what it says, it'll wait for the promise to come back
+  - only modern browsers (babel can transpile, but not needed for demo app)
 
 ---
 
