@@ -24,6 +24,10 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
   - hooks return an array `[currentState , updaterFunction]`
   - Holt uses `setX` naming convention for the updater function. Not necessary (can be named anything), but makes sense for readability
   - hooks take an arg that is the default state `useSate(`defaultState`)`
+  - `useEffect`
+    - takes place of `componentWillMount`, `componentDidMount`, and `componentDidUpdate`
+    - component renders on screen before `useEffect` runs. `useEffect` runs asynchronously after the component renders and then updates the component and rerenders
+    - final arg for useEffect is an array of dependencies (what variables it's taking in and needs to watch). If you want to run it only once after render leave dependancy arg empty and it won't watch for any updates and run again-AND make sure it actually doesn't have dependancies (otherwise it'll keep auto updating with nothing to watch for and crash your api)
 - Rendering
   - Every time something is updated the component rerenders, so it's important to keep render functions light. Heavy lifting should be done elsewhere. Render function should focus on rendering.
 
