@@ -6,6 +6,29 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
 
 ---
 
+## Takeaways & Notes
+
+- JSX ❤️
+- VS Code does have some neat autocompletes and helpers
+- Parcel is sweet
+  - No config! Get up and running quickly.
+  - Add a script to _package.json_ `"dev": "parcel src/index.html"` to tell it where to build from and it will build the project and spin up a dev server
+  - on save it rebuilds the project and hot reloads the browser
+  - Use webpack instead if customization is needed.
+  - We just auto imported a package from npm just by writing an import statement. Write `import { ANIMALS } from "@frontendmasters/pet";` and get `"@frontendmasters/pet": "^1.0.3"` automatically. neato.
+- HOOKS!
+  - A way to set state ("do state") in functional components
+  - Hooks run in order on render...and for some reason everything breaks when if they get out of order, so NEVER use hooks in an if statement or conditional logic.
+  - always start hooks with `use` (as in `useState`) per convention
+  - there's a bunch of hooks and you can create custom hooks
+  - hooks return an array `[currentState , updaterFunction]`
+  - Holt uses `setX` naming convention for the updater function. Not necessary (can be named anything), but makes sense for readability
+  - hooks take an arg that is the default state `useSate(`defaultState`)`
+- Rendering
+  - Every time something is updated the component rerenders, so it's important to keep render functions light. Heavy lifting should be done elsewhere. Render function should focus on rendering.
+
+---
+
 ## Welcome to the Complete Intro to React v5 and Intermediate React v2!
 
 [See the course website here][v5].
