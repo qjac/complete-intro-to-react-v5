@@ -16,7 +16,7 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
   - on save it rebuilds the project and hot reloads the browser
   - Use webpack instead if customization is needed.
   - We just auto imported a package from npm just by writing an import statement. Write `import { ANIMALS } from "@frontendmasters/pet";` and get `"@frontendmasters/pet": "^1.0.3"` automatically. neato.
-- HOOKS!
+- [HOOKS!] <https://btholt.github.io/complete-intro-to-react-v5/hooks-in-depth>
   - A way to set state ("do state") in functional components
   - Hooks run in order on render...and for some reason everything breaks when if they get out of order, so NEVER use hooks in an if statement or conditional logic.
   - always start hooks with `use` (as in `useState`) per convention
@@ -29,6 +29,9 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
     - component renders on screen before `useEffect` runs. `useEffect` runs asynchronously after the component renders and then updates the component and rerenders
     - final arg for useEffect is an array of dependencies (what variables it's taking in and needs to watch). If you want to run it only once after render leave dependancy arg empty and it won't watch for any updates and run again-AND make sure it actually doesn't have dependancies (otherwise it'll keep auto updating with nothing to watch for and crash your api)
     - useEffect will propagate updates to dependant components
+    - if you return a clean up function from `useEffect` it will run on unmount
+  - `useRef` can only have `refName.current`. `refName.anythingElse` will throw an error.
+  - `useReducer` allows redux-style reducers in hooks. Can replace redux in some cases (especially when used in conjunction with `useContext`)
 - Rendering
   - Every time something is updated the component rerenders, so it's important to keep render functions light. Heavy lifting should be done elsewhere. Render function should focus on rendering.
 - Strictmode
@@ -41,10 +44,10 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
   - only modern browsers (babel can transpile, but not needed for demo app)
 - Class Components
   - still a thing
-  - useEffect has no effect. Use lifecycle methods
-  - componentDidMount runs once still, componentDidUpdate runs on update
+  - `useEffect` has no effect. Use lifecycle methods
+  - c`omponentDidMount` runs once still, `componentDidUpdate` runs on update
   - still need to include `super(props)` in constructor and all class components MUST HAVE render method
-  - this.props is immutable. use this.state and setState() instead of hooks to set state in class components...only the component can modify its state.
+  - `this.props` is immutable. use this.state and setState() instead of hooks to set state in class components...only the component can modify its state.
   - arrow functions are often used inside class components to avoid creating a new context for `this`. the context for `this` is very important in class components (less so with hooks)
   - Public class functions
     - `"@babel/plugin-proposal-class-properties"`
@@ -65,6 +68,8 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
   - the function (second arg) will only run if there is no provider
   - Works really well with hooks and functional components. A little more unweildy in class components, but still doable
 - What is a provider? in the general/abstract sense?
+- Portals (used for modal) Other uses might include contextual menus or nav
+- When parent elements are rerendered, ALL children are rerendered. Generally, that's fine since react renders very quickly (unless you write a non-performant render, so don't do that)
 
 ---
 
