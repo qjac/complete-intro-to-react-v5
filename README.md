@@ -58,6 +58,13 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
   - Catches error
 - only use spread operators to pass thru props (if it's just passing through and not using...if the component is using the props it's hard to read and follow so be more vrbose)
 - reach router. navigate vs redirect? both redirect user. what's the difference?
+- Context
+  - can provide entire app with global application state
+  - use in place of redux. when would reduz vs context be the appropriate choice?
+  - similar to useState hook it returns an array [currentContext, setContextFunction]
+  - the function (second arg) will only run if there is no provider
+  - Works really well with hooks and functional components. A little more unweildy in class components, but still doable
+- What is a provider? in the general/abstract sense?
 
 ---
 
