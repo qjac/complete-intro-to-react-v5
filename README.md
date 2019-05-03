@@ -71,6 +71,18 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
 - Portals (used for modal) Other uses might include contextual menus or nav
 - When parent elements are rerendered, ALL children are rerendered. Generally, that's fine since react renders very quickly (unless you write a non-performant render, so don't do that)
 
+### Intermediate React
+
+- Emotion
+  - css-in-js. write css in your component and it will spit out a css file.
+  - uses tagged template literals to run css thru function (write standard css, not js property names. ex. write `background-color` NOT `backgroundColor`)
+  - benefits
+    - it's "optimized for deletability". If you remove a component all of it's specific styles go with it. less unused css floating around.
+    - easier to modify programmaitcally. it's already in your js...it _is_ js, so popping variables in is a breeze.
+    - design systems! import variables all over the place
+    - uses scss syntax
+    - houdini is coming along too which will let you control how the browser paints
+
 ---
 
 ## Welcome to the Complete Intro to React v5 and Intermediate React v2!
