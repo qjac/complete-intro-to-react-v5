@@ -39,6 +39,13 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
   - will always return a promise
   - `wait` keyword does just what it says, it'll wait for the promise to come back
   - only modern browsers (babel can transpile, but not needed for demo app)
+- Class Components
+  - still a thing
+  - useEffect has no effect. Use lifecycle methods
+  - componentDidMount runs once still, componentDidUpdate runs on update
+  - still need to include `super(props)` in constructor and all class components MUST HAVE render method
+  - this.props is immutable. use this.state and setState() instead of hooks to set state in class components...only the component can modify its state.
+  - arrow functions are often used inside class components to avoid creating a new context for `this`. the context for `this` is very important in class components (less so with hooks)
 
 ---
 
