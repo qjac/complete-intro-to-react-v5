@@ -53,6 +53,11 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
       - only a concern for event listeners and functions passed to children. lifecycle methods and the class render function automatically have the component context
 - `active: +event.target.dataset.index` the plus coerces this into an interger (can also use parseInt)
 - `.bind()` is expensive and if it's in the render it will need to run each render. eek. keep it out of the render. also it might not be so slow now ???
+- Error Boundaries
+  - `.then()` runs after promise is fulfilled (whether successful or not). try/catch is for handling errors.
+  - Catches error
+- only use spread operators to pass thru props (if it's just passing through and not using...if the component is using the props it's hard to read and follow so be more vrbose)
+- reach router. navigate vs redirect? both redirect user. what's the difference?
 
 ---
 
