@@ -46,6 +46,13 @@ See my coding journing on the [code-along branch](https://github.com/qjac/comple
   - still need to include `super(props)` in constructor and all class components MUST HAVE render method
   - this.props is immutable. use this.state and setState() instead of hooks to set state in class components...only the component can modify its state.
   - arrow functions are often used inside class components to avoid creating a new context for `this`. the context for `this` is very important in class components (less so with hooks)
+  - Public class functions
+    - `"@babel/plugin-proposal-class-properties"`
+    - coming soon (and now with special setup) no constructor needed
+    - `this.handleIndexClick = this.handleIndexClick.bind(this)` is very familiar. with this set up, it's not needed. handleIndexClick written as an arrow function retains the correct binding (to the component, not the component's method) of `this` without it.
+      - only a concern for event listeners and functions passed to children. lifecycle methods and the class render function automatically have the component context
+- `active: +event.target.dataset.index` the plus coerces this into an interger (can also use parseInt)
+- `.bind()` is expensive and if it's in the render it will need to run each render. eek. keep it out of the render. also it might not be so slow now ???
 
 ---
 
