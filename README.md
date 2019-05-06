@@ -4,6 +4,8 @@ Workshop taken May 2019
 
 See my coding journing on the [code-along branch](https://github.com/qjac/complete-intro-to-react-v5/tree/code-along).
 
+Completed Intro to React. Did not complete Intermediate React course (too much sun to play in!). Pick it back up at [Chapter 18: Code Splitting](https://btholt.github.io/complete-intro-to-react-v5/code-splitting)
+
 ---
 
 ## Takeaways & Notes
